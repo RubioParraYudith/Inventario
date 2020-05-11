@@ -1,0 +1,70 @@
+﻿@model IEnumerable<ControlInventario.Models.Supplier>
+
+@{
+    ViewBag.Title = "Index";
+}
+    <div class="masthead">
+        <div class="masthead-content foot">
+            <div class="container">
+
+                <div class="row col-md-12">
+                    <div class="col-md-6 col-md-offset-3">
+                        <h4 class="text-center">Lista de Proveedores</h4>
+                    </div>
+                </div>
+
+                <p>
+                    <a href="@Url.Action("Create","Suppliers")" class="btn btn-sm btn-success">Nuevo Proveedor</a>
+                </p>
+                <table class="table table-hover table-condensed">
+                    <tr>
+                        <th>
+                            Código de Proveedor
+                        </th>
+                        <th>
+                            Nombre del Proveedor
+                        </th>
+                        <th>
+                            Correo Electrónico
+                        </th>
+                        <th>
+                            Télefono
+                        </th>
+                        <th>
+                            Dirección
+                        </th>
+                        <th></th>
+                    </tr>
+
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SupplierCode)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SupplierName)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Email)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Phone)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Address)
+                            </td>
+                            <td>
+                                @Html.ActionLink("Editar", "Edit", new { id = item.Id }, new { @class = "btn btn-warning btn-sm" }) |
+                                @Html.ActionLink("Detalles", "Details", new { id = item.Id }, new { @class = "btn btn-info btn-sm" }) |
+                                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id }, new { @class = "btn btn-danger btn-sm" })
+
+                            </td>
+                        </tr>
+                    }
+
+                </table>
+                </div>
+            </div>
+        </div>
+
