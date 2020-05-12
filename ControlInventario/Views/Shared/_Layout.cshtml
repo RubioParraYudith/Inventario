@@ -20,7 +20,7 @@
 
     <!-- Custom styles for this template-->
     <link href="~/Content/sb-admin-2.min.css" rel="stylesheet">
-
+    <link href="//cdn.datatables.net/1.10.21/css/jquery.dataTables.min.css" rel="stylesheet" />
 </head>
 
 <body id="page-top">
@@ -45,7 +45,7 @@
 
                 <!-- Nav Item - Dashboard -->
                 <li class="nav-item active">
-                    <a class="nav-link" href="index.html">
+                    <a class="nav-link" href="@Url.Action("Index","Home")">
                         <i class="fas fa-fw fa-tachometer-alt"></i>
                         <span>Principal</span>
                     </a>
@@ -163,14 +163,14 @@
                             <i class="fa fa-bars"></i>
                         </button>
 
-                       
+
 
                         <!-- Topbar Navbar -->
                         <ul class="navbar-nav ml-auto">
 
-                           
 
-                            
+
+
 
                             <div class="topbar-divider d-none d-sm-block"></div>
 
@@ -178,8 +178,8 @@
                             <li class="nav-item dropdown no-arrow">
                                 <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                     <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                                        @User.Identity.GetUserName()  
-                                    <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
+                                        @User.Identity.GetUserName()
+                                        <img class="img-profile rounded-circle" src="https://source.unsplash.com/QAB-WJcbgJk/60x60">
                                 </a>
                                 <!-- Dropdown - User Information -->
                                 <div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -257,14 +257,14 @@
                     <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
                     @using (Html.BeginForm("LogOff", "Account", FormMethod.Post, new { id = "logoutForm", @class = "navbar-right" }))
                     {
-                    @Html.AntiForgeryToken()
+                        @Html.AntiForgeryToken()
 
-                    <ul class="nav navbar-nav navbar-right">
-                        <li>
+                        <ul class="nav navbar-nav navbar-right">
+                            <li>
 
                             </li>
-                        <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
-                    </ul>
+                            <li><a href="javascript:document.getElementById('logoutForm').submit()">Cerrar sesión</a></li>
+                        </ul>
                     }
                 </div>
             </div>
@@ -280,6 +280,8 @@
 
     <!-- Custom scripts for all pages-->
     <script src="~/Scripts/sb-admin-2.js"></script>
+    <script src="//cdn.datatables.net/1.10.21/js/jquery.dataTables.min.js"></script>
+
 
     @RenderSection("scripts", required: false)
 
