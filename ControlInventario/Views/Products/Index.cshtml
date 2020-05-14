@@ -5,9 +5,14 @@
 }
 
 
-<p>
-    <a href="@Url.Action("Create","Products")" class="btn btn-sm btn-success">Nuevo Producto</a>
-</p>
+    <p>
+       
+        <a href="@Url.Action("Create","Products")" class="btn btn-primary btn-sm btn-icon-split">
+            @*Si no encuentras iconos ir a Font Awesome*@
+            <span class="icon text-white-50"><i class="fas fa-plus"></i></span>
+            <span class="text">Nuevo Producto</span>
+        </a>
+    </p>
 <table class="table table-sm" id="myProducts">
     <thead>
         <tr>
